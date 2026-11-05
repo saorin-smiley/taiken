@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自分とのパートナーシップ体験講座｜相手を変えなくても、関係は変えられる</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    background: linear-gradient(180deg, #faf7ff 0%, #f3edfb 100%);
+    color: #463a63;
+    line-height: 1.9;
+    font-size: 19px;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 18px 48px; }
+  section { margin: 44px 0; }
+  .hero { text-align: center; padding: 40px 0 4px; margin-top: 0; }
+  .badge {
+    display: inline-block; background: #5b4390; color: #fff;
+    padding: 6px 22px; border-radius: 999px; font-size: 15px; letter-spacing: .08em;
+  }
+  h1 { font-size: 34px; line-height: 1.5; margin: 26px 0 6px; font-weight: 700; }
+  h1 .pink, .pink { color: #e7548c; }
+  .subtitle { font-size: 25px; font-weight: 700; margin: 14px 0 4px; }
+  h2 { font-size: 27px; color: #5b4390; text-align: center; margin-bottom: 24px; font-weight: 700; line-height: 1.6; }
+  .card {
+    background: #fff; border-radius: 22px; padding: 28px 24px;
+    box-shadow: 0 3px 14px rgba(91,67,144,.07); margin: 20px 0;
+  }
+  .card.border { border: 1.5px solid #ddd0f2; box-shadow: none; }
+  .card p { margin: 14px 0; }
+  .card p:first-child { margin-top: 0; }
+  .card p:last-child { margin-bottom: 0; }
+  .center { text-align: center; }
+  .lead-pink { color: #e7548c; font-size: 21px; font-weight: 700; text-align: center; margin: 30px 0 6px; }
+  .wishes { text-align: center; font-size: 24px; font-weight: 700; color: #5b4390; line-height: 2.1; margin: 16px 0; }
+  .note { color: #8b7fa8; font-size: 15px; text-align: center; }
+  .photo { width: 230px; height: 230px; border-radius: 50%; object-fit: cover; margin: 12px auto 4px; display: block; }
+  .pricebox { background: #fdeef4; border-radius: 20px; padding: 24px 18px; margin: 22px 0; text-align: center; }
+  .pricebox .label { color: #8b7fa8; font-size: 15px; }
+  .pricebox .price { font-size: 44px; font-weight: 800; color: #e7548c; line-height: 1.3; }
+  .pricebox .note2 { margin-top: 8px; font-weight: 700; color: #5b4390; }
+  .cta {
+    display: block; background: #06c755; color: #fff; text-decoration: none;
+    font-size: 21px; font-weight: 700; text-align: center;
+    padding: 16px 12px; border-radius: 999px; margin: 22px 0 8px;
+    box-shadow: 0 4px 14px rgba(6,199,85,.35);
+  }
+  .cta-sub { text-align: center; color: #8b7fa8; font-size: 15px; }
+  .type {
+    border-radius: 20px; padding: 22px 22px; margin: 16px 0;
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .type .letter { font-size: 34px; font-weight: 800; color: #e7548c; line-height: 1.2; }
+  .type .name { font-size: 22px; font-weight: 700; color: #5b4390; }
+  .type .desc { color: #6f6390; margin-top: 2px; }
+  .type-a { background: #ece5f8; }
+  .type-b { background: #fdeef4; }
+  .type-c { background: #e6f2e4; }
+  .type-d { background: #fdf3d7; }
+  .hint { border-radius: 22px; padding: 26px 24px; margin: 18px 0; }
+  .hint .hname { font-size: 23px; font-weight: 700; color: #5b4390; margin-bottom: 10px; }
+  .hint .step { color: #e7548c; font-weight: 700; margin-top: 16px; }
+  .gift-band {
+    background: linear-gradient(135deg, #4a3577, #6a4fa3); color: #fff;
+    border-radius: 22px; padding: 30px 24px; text-align: center; margin: 20px 0;
+  }
+  .gift-band .gbadge {
+    display: inline-block; background: #d9a441; color: #fff; font-size: 14px;
+    padding: 4px 18px; border-radius: 999px; letter-spacing: .06em;
+  }
+  .gift-band .gpremium { letter-spacing: .35em; color: #f2cf8a; margin-top: 14px; font-size: 15px; }
+  .gift-band .gtitle { font-size: 27px; font-weight: 700; line-height: 1.6; margin-top: 10px; }
+  .gift-band .gtitle .pink { color: #ff9ec2; }
+  .gift-cream {
+    background: #fff8e6; border: 1.5px solid #d9a441; border-radius: 20px;
+    padding: 24px 20px; text-align: center; margin: 20px 0;
+  }
+  .gift-cream .big { font-size: 27px; font-weight: 800; color: #c1912f; }
+  .gift-trio { display: block; }
+  .gift-item { border-radius: 20px; padding: 22px 20px; margin: 14px 0; text-align: center; }
+  .gift-item .glabel { font-weight: 700; font-size: 15px; }
+  .gift-item .gname { font-size: 22px; font-weight: 700; margin: 6px 0; }
+  .changes { list-style: none; }
+  .changes li { margin: 12px 0; padding-left: 4px; }
+  .profile-head { display: flex; gap: 18px; align-items: center; }
+  .profile-head .photo { width: 130px; height: 130px; margin: 0; flex-shrink: 0; }
+  .profile-head .pname { font-size: 25px; font-weight: 700; color: #5b4390; }
+  .profile-head .plabel { color: #e7548c; font-weight: 700; font-size: 15px; }
+  .profile-head .prole { color: #8b7fa8; }
+  .lav { background: #efe9fa; border-radius: 22px; padding: 28px 24px; margin: 20px 0; }
+  .lav p { margin: 14px 0; }
+  .lav p:first-child { margin-top: 0; }
+  .lav p:last-child { margin-bottom: 0; }
+  .info {
+    background: #fff; border: 1.5px solid #ddd0f2; border-radius: 20px;
+    padding: 22px 20px; margin: 22px 0; font-size: 18px;
+  }
+  .info dt { font-weight: 700; color: #5b4390; margin-top: 12px; }
+  .info dt:first-child { margin-top: 0; }
+  .closing { text-align: center; }
+  .closing .lead { font-size: 25px; font-weight: 700; }
+  footer { text-align: center; color: #8b7fa8; font-size: 15px; margin-top: 34px; }
+  ol.learn { margin-left: 24px; }
+  ol.learn li { margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="hero">
+    <span class="badge">オンライン開催（Zoom）・60分</span>
+    <h1>相手を変えなくても、<br><span class="pink">関係は変えられる</span></h1>
+    <p class="subtitle">自分との<br>パートナーシップ体験講座</p>
+    <div class="card border center">
+      <p style="font-size:23px; font-weight:700; color:#5b4390;">4タイプ診断 × 7日間処方箋</p>
+      <p style="color:#8b7fa8;">『今の私』に必要な一歩が見つかる60分</p>
+    </div>
+    <img class="photo" src="photo.png" alt="さおりん">
+    <p>参加者限定・非売品<br><strong>プレミアム特典つき</strong></p>
+    <p style="margin-top:10px;">自分を責める毎日から、自分の味方になれる私へ</p>
+  </section>
+
+  <section>
+    <h2>こんなふうに感じていませんか？</h2>
+    <div class="card">
+      <p><strong>何度伝えても、分かってもらえない</strong></p>
+      <p><strong>どうして私ばかり頑張っているんだろう</strong></p>
+      <p><strong>相手さえ変われば幸せになれるのに</strong></p>
+    </div>
+    <p class="lead-pink">本当は、相手を責めたいわけではない。</p>
+    <p class="wishes">分かってほしい。<br>大切にしてほしい。<br>安心したい。</p>
+    <p class="center">ただ、それだけなのかもしれません。</p>
+  </section>
+
+  <section>
+    <h2>あなたが悪いわけではありません</h2>
+    <div class="lav center">
+      <p>繰り返す人間関係のパターンは、<br>性格の欠点ではなく、<br>関係を守るために身につけた<br>「頑張り方のクセ」です。</p>
+    </div>
+    <p class="lead-pink">だから、責めなくて大丈夫。<br>気づくところから変えていけます。</p>
+    <div class="card">
+      <p style="font-size:22px; font-weight:700; color:#5b4390;">60分で分かること</p>
+      <ol class="learn">
+        <li>今の自分に出やすいタイプ</li>
+        <li>繰り返しやすい心のクセ</li>
+        <li>今の自分に必要な小さな一歩</li>
+        <li>講座後のタイプ別7日間プラン</li>
+      </ol>
+    </div>
+    <p class="note">正解も不正解もありません</p>
+  </section>
+
+  <section>
+    <h2>あなたの人生を変えるために、<br>誰かを変える必要はありません。</h2>
+    <p class="center" style="color:#8b7fa8;">まずは、自分に問いかけてみます。</p>
+    <div class="card border center">
+      <p>私は今、何を感じている？</p>
+      <p>本当はどうしたい？</p>
+      <p>私は私を、どう扱っている？</p>
+    </div>
+    <h2 style="margin-top:36px;">あなたは、今どのタイプ？</h2>
+    <div class="type type-a">
+      <div class="letter">A</div>
+      <div><div class="name">がんばり屋さんタイプ</div><div class="desc">休む・頼ることが苦手</div></div>
+    </div>
+    <div class="type type-b">
+      <div class="letter">B</div>
+      <div><div class="name">お世話優先タイプ</div><div class="desc">自分より周りを優先</div></div>
+    </div>
+    <div class="type type-c">
+      <div class="letter">C</div>
+      <div><div class="name">正解さがしタイプ</div><div class="desc">人の答えがないと不安</div></div>
+    </div>
+    <div class="type type-d">
+      <div class="letter">D</div>
+      <div><div class="name">がまんタイプ</div><div class="desc">本音をため込みやすい</div></div>
+    </div>
+    <div class="card border center">
+      <p>タイプはあなたを決めつけるものではなく、<br>今の自分をやさしく理解するヒントです。</p>
+    </div>
+    <p class="note">※医療・心理学上の診断ではありません</p>
+  </section>
+
+  <section>
+    <h2>タイプ別｜今のあなたへのヒント</h2>
+    <div class="hint type-a">
+      <p class="hname">A　がんばり屋さんタイプ</p>
+      <p>責任感が強く、最後までやり切れる人。休むことや、人に頼ることを苦手に感じやすいタイプです。</p>
+      <p class="step">今の一歩<br>一人で抱えず、一つ頼ってみる</p>
+    </div>
+    <div class="hint type-b">
+      <p class="hname">B　お世話優先タイプ</p>
+      <p>人の気持ちによく気づき、周りを大切にできる人。自分の望みを後回しにしやすいタイプです。</p>
+      <p class="step">今の一歩<br>周りより先に、自分の望みを聞く</p>
+    </div>
+    <div class="hint type-c">
+      <p class="hname">C　正解さがしタイプ</p>
+      <p>慎重で、より良い方法を考えられる人。誰かの答えがないと、不安になりやすいタイプです。</p>
+      <p class="step">今の一歩<br>小さなことを、自分で選んでみる</p>
+    </div>
+    <div class="hint type-d">
+      <p class="hname">D　がまんタイプ</p>
+      <p>人との関係を大切にし、場を穏やかに保てる人。本音をため込みやすいタイプです。</p>
+      <p class="step">今の一歩<br>小さな本音を、言葉にしてみる</p>
+    </div>
+    <p class="center" style="color:#8b7fa8;">強みを消さずに、自分にもやさしく</p>
+  </section>
+
+  <section>
+    <div class="gift-band">
+      <span class="gbadge">参加者限定・非売品</span>
+      <p class="gpremium">PREMIUM GIFT</p>
+      <p class="gtitle">診断して終わり、にしない。<br><span class="pink">タイプ別 7日間</span><br>自分とのパートナーシップ処方箋</p>
+      <p style="margin-top:12px;">診断タイプに合わせた、あなただけの実践PDF</p>
+    </div>
+    <div class="gift-cream">
+      <p class="big">1日3分 × 7日間</p>
+      <p style="margin-top:8px;">無理なく続けられる、小さな行動プラン</p>
+      <p style="color:#8b7fa8;">できた日も、できなかった日も大丈夫</p>
+    </div>
+    <div class="gift-trio">
+      <div class="gift-item type-a">
+        <p class="glabel" style="color:#5b4390;">特典 1</p>
+        <p class="gname" style="color:#5b4390;">あなたの診断結果</p>
+        <p>強みと心のクセが分かります</p>
+      </div>
+      <div class="gift-item type-b">
+        <p class="glabel" style="color:#e7548c;">特典 2</p>
+        <p class="gname" style="color:#e7548c;">タイプ別7日間プラン</p>
+        <p>毎日一つだけ実践します</p>
+      </div>
+      <div class="gift-item" style="background:#fdf3d7;">
+        <p class="glabel" style="color:#c1912f;">特典 3</p>
+        <p class="gname" style="color:#c1912f;">7日後の振り返りシート</p>
+        <p>変化と気づきを言葉にします</p>
+      </div>
+    </div>
+    <div class="card border center">
+      <p><strong>A</strong> がんばり屋さん　<strong>B</strong> お世話優先<br><strong>C</strong> 正解さがし　<strong>D</strong> がまん</p>
+    </div>
+    <p class="lead-pink">この講座でしか受け取れない、参加者限定プレゼント</p>
+  </section>
+
+  <section>
+    <h2>診断を、日常の変化へ</h2>
+    <p class="center" style="color:#8b7fa8;">1日約3分。できない日があっても大丈夫。</p>
+    <div class="card">
+      <p class="center" style="color:#e7548c; font-weight:700; font-size:22px;">7日後、こんな変化に<br>気づくかもしれません</p>
+      <ul class="changes">
+        <li>・一人で抱えず、休む・頼るを選べる</li>
+        <li>・周りより先に、自分の望みを聞ける</li>
+        <li>・人の答えがなくても、自分で選べる</li>
+        <li>・限界になる前に、本音を伝えられる</li>
+      </ul>
+    </div>
+    <p class="center" style="font-size:21px; font-weight:700; color:#5b4390;">できた日も、できなかった日も、<br>自分を責めずに気づくことが<br>自分との関係を変える一歩になります。</p>
+    <p class="note">※感じ方や変化には個人差があります</p>
+  </section>
+
+  <section>
+    <div class="profile-head">
+      <img class="photo" src="photo.png" alt="秋山砂織（さおりん）">
+      <div>
+        <p class="plabel">自己紹介</p>
+        <p class="pname">秋山砂織（さおりん）</p>
+        <p class="prole">自分とのパートナーシップ講師</p>
+      </div>
+    </div>
+    <div class="lav">
+      <p><strong>夫とは結婚31年。</strong><br>交際期間を含めると35年になります。</p>
+      <p>相手を変えようとして苦しくなった経験から、<span class="pink"><strong>「相手を変えなくても、関係は変えられる」</strong></span>ことをお伝えしています。</p>
+    </div>
+    <p class="note">詳しいプロフィールは、下の文章でご紹介します</p>
+  </section>
+
+  <section>
+    <h2>私も、相手を変えようとしていました</h2>
+    <div class="card">
+      <p>夫とは結婚31年。<br>交際期間を含めると35年になります。</p>
+      <p>以前の私は、夫に「もっと分かってほしい」と求め、相手を変えようとしていました。</p>
+      <p>子育てでも心配から先回りし、自分の気持ちより、家族がどうすればうまくいくかばかり考えていました。</p>
+      <p style="color:#e7548c; font-weight:700;">夫婦関係が、離婚の危機を迎えたこともあります。</p>
+    </div>
+    <p class="center" style="color:#8b7fa8;">答えを外に探し続け、<br>私は自分の気持ちを見失っていました。</p>
+  </section>
+
+  <section>
+    <h2>自分の声を聞くことから始めました</h2>
+    <div class="lav">
+      <p style="color:#e7548c; font-weight:700;">「私は今、どう感じている？」<br>「本当はどうしたい？」</p>
+      <p>そうやって、自分に聞くことを少しずつ始めました。</p>
+      <p>相手の正解を探すのではなく、自分の声を聞くようになったとき、夫婦や家族との関係が変わり始めました。</p>
+      <p>今では夫婦で同じ方向を見ながら仕事をし、「今が人生で一番幸せ」と感じています。</p>
+    </div>
+    <p class="lead-pink">相手を変えなくても、関係は変えられる。<br>その最初の一歩を、一緒に見つけませんか？</p>
+  </section>
+
+  <section class="closing">
+    <p class="lead">気づいた瞬間から、<br><span class="pink">関係は変わり始めます。</span></p>
+    <dl class="info" style="text-align:left;">
+      <dt>開催方法</dt>
+      <dd>オンライン開催（Zoom）・60分</dd>
+      <dt>日程</dt>
+      <dd>決まり次第、公式LINEでご案内します</dd>
+      <dt>参加費</dt>
+      <dd>3,300円（タイプ別・7日間処方箋つき）</dd>
+      <dt>特典</dt>
+      <dd>体験講座を受けた方は、次の講座「自分とのパートナーシップ発見ワーク」で3,300円の割引があります</dd>
+    </dl>
+    <div class="pricebox">
+      <p class="label">参加費</p>
+      <p class="price">3,300円</p>
+      <p class="note2">タイプ別・7日間処方箋つき🎁</p>
+    </div>
+    <a class="cta" href="https://lin.ee/uctFvEA">LINEで日程の案内を受け取る</a>
+    <p class="cta-sub">お申し込み・日程のご案内は公式LINEからお届けします</p>
+    <p style="margin-top:26px;">相手を変える前に、<br>まず自分の本音を迎えにいきませんか？</p>
+  </section>
+
+  <footer>自分とのパートナーシップ体験講座<br>講師：秋山砂織（さおりん）</footer>
+
+</div>
+</body>
+</html>
