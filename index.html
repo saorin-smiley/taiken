@@ -19,41 +19,54 @@
     padding: 6px 22px; border-radius: 999px; font-size: 14px; letter-spacing: .08em;
   }
   h1 {
-    font-size: 30px; line-height: 1.5; margin: 26px 0 6px; color: #463a63; font-weight: 700;
+    font-size: 34px; line-height: 1.5; margin: 26px 0 6px; color: #463a63; font-weight: 700;
   }
   h1 .pink { color: #e7548c; }
-  .subtitle { font-size: 22px; font-weight: 700; margin: 14px 0 4px; }
+  .subtitle { font-size: 25px; font-weight: 700; margin: 14px 0 4px; }
   .card {
     background: #fff; border: 1.5px solid #ddd0f2; border-radius: 20px;
     padding: 22px 18px; margin: 22px 0;
   }
-  .card .big { font-size: 21px; font-weight: 700; color: #5b4390; }
+  .card .big { font-size: 23px; font-weight: 700; color: #5b4390; }
   .card .small { color: #8b7fa8; margin-top: 6px; }
   .photo { width: 230px; height: 230px; border-radius: 50%; object-fit: cover; margin: 10px auto 4px; display: block; }
   .pricebox {
     background: #fdeef4; border-radius: 20px; padding: 24px 18px; margin: 22px 0; text-align: center;
   }
   .pricebox .label { color: #8b7fa8; font-size: 15px; }
-  .pricebox .price { font-size: 40px; font-weight: 800; color: #e7548c; line-height: 1.3; }
+  .pricebox .price { font-size: 44px; font-weight: 800; color: #e7548c; line-height: 1.3; }
   .pricebox .note { margin-top: 8px; font-weight: 700; color: #5b4390; }
   .cta {
     display: block; background: #06c755; color: #fff; text-decoration: none;
-    font-size: 19px; font-weight: 700; text-align: center;
+    font-size: 21px; font-weight: 700; text-align: center;
     padding: 16px 12px; border-radius: 999px; margin: 22px 0 8px;
     box-shadow: 0 4px 14px rgba(6,199,85,.35);
   }
-  .cta-sub { text-align: center; color: #8b7fa8; font-size: 14px; }
+  .cta-sub { text-align: center; color: #8b7fa8; font-size: 15px; }
   img.lp { width: 100%; display: block; border-radius: 12px; margin: 18px 0; }
   .closing { text-align: center; padding: 18px 8px 0; }
-  .closing .lead { font-size: 22px; font-weight: 700; }
+  .closing .lead { font-size: 25px; font-weight: 700; }
   .closing .lead .pink { color: #e7548c; }
   .info {
     background: #fff; border: 1.5px solid #ddd0f2; border-radius: 20px;
-    padding: 22px 18px; margin: 22px 0; text-align: left; font-size: 16px;
+    padding: 22px 18px; margin: 22px 0; text-align: left; font-size: 18px;
   }
   .info dt { font-weight: 700; color: #5b4390; margin-top: 10px; }
   .info dt:first-child { margin-top: 0; }
-  footer { text-align: center; color: #8b7fa8; font-size: 14px; margin-top: 30px; }
+  footer { text-align: center; color: #8b7fa8; font-size: 15px; margin-top: 30px; }
+  .zoom-hint { text-align: center; color: #5b4390; font-weight: 700; font-size: 16px; margin: 14px 0 0; }
+  img.lp { cursor: zoom-in; }
+  #lightbox {
+    display: none; position: fixed; inset: 0; background: rgba(30,20,50,.92);
+    z-index: 99; overflow: auto; -webkit-overflow-scrolling: touch;
+  }
+  #lightbox.open { display: block; }
+  #lightbox img { width: 100%; display: block; }
+  #lightbox .close {
+    position: fixed; top: 12px; right: 12px; z-index: 100;
+    background: #fff; color: #463a63; border: none; border-radius: 999px;
+    font-size: 17px; font-weight: 700; padding: 10px 18px;
+  }
 </style>
 </head>
 <body>
@@ -71,6 +84,8 @@
     <p>参加者限定・非売品<br><strong>プレミアム特典つき</strong></p>
     <p style="margin-top:10px;">自分を責める毎日から、自分の味方になれる私へ</p>
   </section>
+
+  <p class="zoom-hint">📱 画像はタップすると大きく見られます</p>
 
   <img class="lp" src="02.png" alt="こんなお悩みありませんか">
   <img class="lp" src="03.png" alt="講座で見つけること">
@@ -112,5 +127,20 @@
   <footer>自分とのパートナーシップ体験講座<br>講師：秋山砂織（さおりん）</footer>
 
 </div>
+<div id="lightbox"><button class="close" id="lb-close">✕ 閉じる</button><img id="lb-img" alt="拡大画像"></div>
+<script>
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  document.querySelectorAll('img.lp').forEach(function (im) {
+    im.addEventListener('click', function () {
+      lbImg.src = im.src;
+      lb.classList.add('open');
+      lb.scrollTop = 0;
+    });
+  });
+  function closeLb() { lb.classList.remove('open'); lbImg.src = ''; }
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+</script>
 </body>
 </html>
